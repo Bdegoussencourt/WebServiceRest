@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+        http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+	version="2.2">
+
+   <!-- This descriptor activates the JSF 2.0 Servlet -->
+
+   <!-- Write your navigation rules here. You are encouraged to use CDI for 
+      creating @Named managed beans. -->
+      
+      <application> 
+	    <resource-bundle> 
+	      <base-name> 
+	        messages 
+	      </base-name> 
+	      <var>msg</var> 
+	    </resource-bundle> 
+	  </application> 
+	  
+	  
+	
+	 <navigation-rule>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-action>#{utilsControlleur.logout}</from-action>
+			<from-outcome>login</from-outcome>
+			<to-view-id>pages/protected/user/accueil.xhtm</to-view-id>
+			<redirect/>
+		</navigation-case>
+    </navigation-rule>	
+    
+     <navigation-rule>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>accueil</from-outcome>
+			<to-view-id>pages/protected/user/accueil.xhtm</to-view-id>
+			<redirect/>
+		</navigation-case>
+    </navigation-rule>	
+
+
+	<navigation-rule>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>linkeditStagiaire</from-outcome>
+			<to-view-id>/pages/protected/user/editStagiaire.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	
+
+	<navigation-rule>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>linklistStagiaire</from-outcome>
+			<to-view-id>/pages/protected/user/listStagiaire.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>linkeditAdmin</from-outcome>
+			<to-view-id>/pages/protected/admin/editAdmin.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>linklistAdmin</from-outcome>
+			<to-view-id>/pages/protected/admin/listAdmin.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	
+
+</faces-config>
